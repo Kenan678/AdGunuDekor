@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Ad Günü Dekor</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Ad Günü <span>Dekor</span></div>
+    <a href="index.html" class="nav-cta">← Sayta qayıt</a>
+  </div>
+</header>
+
+<div class="admin-page open" id="adminPage" style="display:block;">
+  <div class="wrap">
+
+    <div class="admin-login" id="adminLogin">
+      <h2>Admin girişi</h2>
+      <p>Qalereyaya şəkil əlavə etmək üçün daxil olun.</p>
+      <div class="admin-error" id="adminError">İstifadəçi adı və ya parol səhvdir.</div>
+      <div class="field">
+        <label for="adminUser">İstifadəçi adı</label>
+        <input type="text" id="adminUser" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="adminPass">Parol</label>
+        <input type="password" id="adminPass" autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary" id="loginBtn">Daxil ol</button>
+    </div>
+
+    <div class="admin-dashboard" id="adminDashboard">
+      <div class="admin-bar">
+        <h2>Qalereya idarəetməsi</h2>
+        <button class="logout-btn" id="logoutBtn">Çıxış</button>
+      </div>
+
+      <div class="upload-zone" id="uploadZone">
+        <div class="upload-icon">🎈</div>
+        <strong>Şəkil əlavə et</strong>
+        <p>Klikləyin və ya şəkli buraya sürüşdürün (JPG, PNG, WEBP — max 4MB)</p>
+        <div class="upload-cat-select">
+          <select id="uploadCategory">
+            <option value="balon">Balon dekoru</option>
+            <option value="foto">Foto zəng</option>
+            <option value="masa">Masa dekoru</option>
+          </select>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+      </div>
+
+      <div class="admin-grid" id="adminGrid"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

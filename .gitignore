@@ -1,0 +1,28 @@
+## .NET build artifacts
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+## Visual Studio Code
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+
+## Secrets / environment-specific
+**/appsettings.Production.json
+*.env
+
+## Uploaded runtime images — istifadəçi yüklədikləri commit olunmur,
+## amma nümunə (seed) şəkil və videolar serverə lazımdır, ona görə onlar saxlanılır
+backend/AdGunuDekor.Api/wwwroot/uploads/*
+!backend/AdGunuDekor.Api/wwwroot/uploads/.gitkeep
+!backend/AdGunuDekor.Api/wwwroot/uploads/seed-*.jpg
+!backend/AdGunuDekor.Api/wwwroot/uploads/videos/
+!backend/AdGunuDekor.Api/wwwroot/uploads/videos/*
+
+## OS
+.DS_Store
+Thumbs.db

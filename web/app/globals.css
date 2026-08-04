@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+@theme {
+  /* Hanna Florist template-indən dəqiq götürülmüş palitra */
+  --color-cream: #efeeec; /* açıq boz seksiya fonu (#E2E2E2-yə yaxın, bir az yumşaq) */
+  --color-blush: #f9ece7; /* somon-açıq fon */
+  --color-ink: #0a0a12; /* qara başlıq (template: #000109) */
+  --color-muted: #6d716e; /* boz mətn */
+  --color-rose: #a66466; /* tozlu çəhrayı — düymələr, etiketlər (template: #A66466) */
+  --color-rose-dark: #8e5254;
+  --color-coral: #eeaa9c; /* somon vurğu (template: #EEAA9C) */
+  --color-gold: #a3a577; /* zeytun — tağ çərçivələri */
+  --color-mint: #92a884;
+  --color-green: #376c6c; /* teal yaşıl — əsas rəng (template: #376C6C) */
+  --color-green-dark: #2c5858;
+
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-script: "Dancing Script", cursive;
+  --font-logo: "Great Vibes", "Dancing Script", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink font-sans antialiased;
+  /* Yan tərəfdən gələn animasiyalar üfüqi scroll yaratmasın */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+}
+
+/* Əlyazma etiket (Hanna: Dancing Script, tozlu çəhrayı) */
+.script-label {
+  font-family: var(--font-script);
+  @apply text-xl font-semibold text-rose;
+}
+
+/* Loqo — elegant kalliqrafik font (Great Vibes) */
+.logo-text {
+  font-family: var(--font-logo);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+/* Tağ (arch) çərçivəsi — Hanna-nın imza elementi: ikiqat zeytun xətli, üstü qövsli */
+.arch-frame {
+  border: 1.5px solid var(--color-gold);
+  border-radius: 999px 999px 24px 24px;
+  padding: 8px;
+}
+
+.arch-frame > * {
+  border-radius: 991px 991px 18px 18px;
+}
+
+/* ---- Scroll zamanı görünmə animasiyaları (Hanna/Elementor fadeIn* üslubu) ---- */
+/* Standart: aşağıdan yuxarı (fadeInUp) */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Yuxarıdan gələn (fadeInDown) */
+.reveal.from-down {
+  transform: translateY(-80px);
+}
+
+/* Soldan gələn (fadeInLeft) */
+.reveal.from-left {
+  transform: translateX(-90px);
+}
+
+/* Sağdan gələn (fadeInRight) */
+.reveal.from-right {
+  transform: translateX(90px);
+}
+
+/* Böyüyərək gələn (zoomIn) */
+.reveal.from-zoom {
+  transform: scale(0.6);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- Üzən dekor elementləri ---- */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.animate-float-slower {
+  animation: float-slower 8s ease-in-out infinite;
+}
+
+/* ---- Üzən konfetti ---- */
+@keyframes confetti-rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-105vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-dot {
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  animation-name: confetti-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* ---- Yavaş fırlanan rəngli fon ləkələri ---- */
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-blob {
+  animation: blob-drift 18s ease-in-out infinite;
+}
+
+/* ---- Sürüşən gradient mətn ---- */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradient-shift 5s ease-in-out infinite;
+}
+
+/* ---- Yumşaq döyünmə (badge üçün) ---- */
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* ---- Üfüqi sürüşən lent (marquee) ---- */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+/* ---- Üzən balonlar (yuxarı-aşağı yellənir) ---- */
+@keyframes balloon-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(3deg);
+  }
+}
+
+.animate-balloon {
+  animation: balloon-float 7s ease-in-out infinite;
+}
+
+/* ---- Rəngli fon animasiyası (bölmələr üçün) ---- */
+@keyframes hue-drift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(25deg);
+  }
+}
+
+.animate-hue {
+  animation: hue-drift 12s ease-in-out infinite;
+}
+
+/* ---- Kart üstünə gələndə parıltı ---- */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+/* ---- Xidmət karuseli: 3D dairəvi halqa (kartlar çevrə boyunca fırlanır) ---- */
+.carousel-stage {
+  perspective: 1400px;
+}
+
+@keyframes carousel-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+.carousel-ring {
+  position: relative;
+  width: 260px;
+  height: 340px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: carousel-spin 32s linear infinite;
+}
+
+/* Mausu üstünə gətirəndə dayanır */
+.carousel-stage:hover .carousel-ring {
+  animation-play-state: paused;
+}
+
+.carousel-card {
+  position: absolute;
+  inset: 0;
+  /* İnline transform (rotateY + translateZ) hər karta ayrıca verilir */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-ring {
+    animation: none;
+  }
+}
+
+/* ---- Yavaş fırlanma (dekorativ halqa üçün) ---- */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow 30s linear infinite reverse;
+}
+
+/* ---- Ken Burns: hero şəklinin sakit yaxınlaşması (elegant stil) ---- */
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 12s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-dot,
+  .animate-blob,
+  .animate-gradient-text,
+  .animate-pulse-soft,
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-marquee,
+  .animate-balloon,
+  .animate-hue,
+  .animate-ken-burns {
+    animation: none;
+  }
+}

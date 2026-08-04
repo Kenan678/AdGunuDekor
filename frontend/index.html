@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Günü Dekor — Balon, Foto zəng və Masa dekoru</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Ad Günü <span>Dekor</span></div>
+    <nav class="navlinks" id="navlinks">
+      <a href="#xidmetler">Xidmətlər</a>
+      <a href="#qalereya">Qalereya</a>
+      <a href="#qiymetler">Qiymətlər</a>
+      <a href="#elaqe">Əlaqə</a>
+    </nav>
+    <a href="#elaqe" class="nav-cta">Sifariş ver</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="siteMain">
+<section class="hero">
+  <div class="confetti" id="confettiHero"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow hero-eyebrow">Bakıda ad günü dekorasiyası</div>
+      <h1>Hər doğum günü, <em>unudulmaz</em> bir səhnəyə çevrilsin</h1>
+      <p class="lead">Balon kompozisiyaları, foto zənglər və masa dekoru — uşağınızın həyatındakı ən şirin günü, fotolarda əbədi qalacaq bir xatirəyə çeviririk.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/994702721555" target="_blank" class="btn btn-primary">
+          WhatsApp-da yazın
+        </a>
+        <a href="#qalereya" class="btn btn-ghost">İşlərimizə baxın</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">150+</span>
+          <span class="stat-label">Hazırlanmış tədbir</span>
+        </div>
+        <div>
+          <span class="stat-num">3</span>
+          <span class="stat-label">Dekor növü</span>
+        </div>
+        <div>
+          <span class="stat-num">24 saat</span>
+          <span class="stat-label">Sifariş cavabı</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-badge">1 yaş 🎈<small>Zəhra üçün</small></div>
+      <div class="hero-card hero-card-main"><img src="assets/sample-masa.jpg" alt="Ad günü dekoru"></div>
+      <div class="hero-card hero-card-float"><img src="assets/sample-balon.jpg" alt="Balon dekoru"></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="xidmetler">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nə təklif edirik</div>
+      <h2>Üç dekor növü, bir vizual hekayə</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img"><img src="assets/sample-balon.jpg" alt="Balon dekoru"></div>
+        <div class="service-body">
+          <span class="service-num">01</span>
+          <h3>Balon dekoru</h3>
+          <p>Xrom, makaron və şəffaf balonlardan qurulan üzən qruplaşmalar — hər mövzuya uyğun rəng palitrası ilə.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img"><img src="assets/sample-foto.jpg" alt="Foto zəng"></div>
+        <div class="service-body">
+          <span class="service-num">02</span>
+          <h3>Foto zəng</h3>
+          <p>Adın və mövzunun çap olunduğu fon arxası — uşaq, geyim mövzusu, idman klubu, istənilən ssenari üzrə hazırlanır.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img"><img src="assets/sample-masa.jpg" alt="Masa dekoru"></div>
+        <div class="service-body">
+          <span class="service-num">03</span>
+          <h3>Masa dekoru</h3>
+          <p>Tort masası, hədiyyə bucağı və əyləşmə zonası — toxuma, işıq və detallarla tam həll olunur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="qalereya">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow">Tamamlanmış tədbirlər</div>
+        <h2>İşlərimizdən bir neçə kadr</h2>
+      </div>
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-filter="all">Hamısı</button>
+        <button class="filter-btn" data-filter="balon">Balon dekoru</button>
+        <button class="filter-btn" data-filter="foto">Foto zəng</button>
+        <button class="filter-btn" data-filter="masa">Masa dekoru</button>
+      </div>
+    </div>
+    <!-- Bu grid tamamilə JS (gallery.js) tərəfindən API-dan doldurulur. -->
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-loading" id="galleryLoading">Şəkillər yüklənir...</div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Necə işləyir</div>
+      <h2>Sifarişdən quruluşa qədər üç addım</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-line"></div>
+        <span class="step-no">01</span>
+        <h3>Yazın, danışaq</h3>
+        <p>WhatsApp və ya Instagram üzərindən tarix, məkan və mövzu haqqında qısa məlumat verin.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-line"></div>
+        <span class="step-no">02</span>
+        <h3>Konsepti təsdiqləyək</h3>
+        <p>Rəng palitrası, fon dizaynı və büdcəyə uyğun paketi birlikdə seçirik.</p>
+      </div>
+      <div class="process-step">
+        <span class="step-no">03</span>
+        <h3>Qurulum və təhvil</h3>
+        <p>Tədbir günü ərzində məkanda quraşdırma tamamlanır — siz sadəcə qonaqları qarşılayırsınız.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="qiymetler">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Paketlər</div>
+      <h2>Büdcənizə uyğun seçim edin</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <span class="price-tag">Başlanğıc</span>
+        <h3>Mini Dekor</h3>
+        <span class="price-amount">90 ₼ <span>başlayan qiymət</span></span>
+        <ul class="price-list">
+          <li>Balon qrupu (1 künc)</li>
+          <li>Rəng palitrası seçimi</li>
+          <li>2 saata qədər quraşdırma</li>
+        </ul>
+        <a href="https://wa.me/994702721555" target="_blank" class="btn btn-ghost">Sifariş ver</a>
+      </div>
+      <div class="price-card featured">
+        <span class="price-tag">Ən çox seçilən</span>
+        <h3>Tam Set</h3>
+        <span class="price-amount">220 ₼ <span>başlayan qiymət</span></span>
+        <ul class="price-list">
+          <li>Foto zəng + balon kompozisiyası</li>
+          <li>Şəxsi ad/yaş yazısı</li>
+          <li>İşıqlı rəqəm dekoru</li>
+          <li>Tam quraşdırma və yığışdırma</li>
+        </ul>
+        <a href="https://wa.me/994702721555" target="_blank" class="btn btn-primary">Sifariş ver</a>
+      </div>
+      <div class="price-card">
+        <span class="price-tag">Premium</span>
+        <h3>Tədbir Dekoru</h3>
+        <span class="price-amount">400 ₼ <span>başlayan qiymət</span></span>
+        <ul class="price-list">
+          <li>Foto zəng + masa dekoru</li>
+          <li>Tematik fiqurlar</li>
+          <li>Neon yazı seçimi</li>
+          <li>Tam dizayn konsultasiyası</li>
+        </ul>
+        <a href="https://wa.me/994702721555" target="_blank" class="btn btn-ghost">Sifariş ver</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="elaqe">
+  <div class="wrap">
+    <div class="eyebrow">Əlaqə</div>
+    <h2>Tədbirinizi indi planlaşdıraq</h2>
+    <p>Tarixi söyləyin, qalanını biz düşünək. İlk konsultasiya pulsuzdur.</p>
+    <div class="contact-actions">
+      <a href="https://wa.me/994702721555" target="_blank" class="btn btn-primary">WhatsApp ilə yazın</a>
+      <a href="#" class="btn btn-ghost">Instagram-a baxın</a>
+    </div>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <span class="c-label">WhatsApp</span>
+        <span class="c-value">+994 70 272 15 55</span>
+      </div>
+      <div class="contact-card">
+        <span class="c-label">İş saatları</span>
+        <span class="c-value">Hər gün, 10:00 — 22:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="logo">Ad Günü <span style="color:var(--gold-text)">Dekor</span></div>
+    <div class="footer-meta">
+      <span>© 2026 Ad Günü Dekor</span>
+      <a href="admin.html" id="adminLink">Admin</a>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>
