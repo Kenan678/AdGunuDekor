@@ -10,8 +10,8 @@ const INFO = [
   {
     icon: "📸",
     title: "Instagram",
-    lines: ["@adgunudekor"],
-    href: "https://instagram.com",
+    lines: ["@adgunu_dekor1"],
+    href: "https://www.instagram.com/adgunu_dekor1",
   },
   {
     icon: "🕙",

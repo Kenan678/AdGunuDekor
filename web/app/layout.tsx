@@ -9,19 +9,26 @@ const SITE_URL =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ad Günü Dekor — Bakıda balon, foto zəng və masa dekoru",
+    default: "Ad Günü Dekoru Bakı | Ad Günü və Tədbir Dekorasiyası — Ad Günü Dekor",
     template: "%s | Ad Günü Dekor",
   },
   description:
-    "Bakıda ad günü dekorasiyası: balon kompozisiyaları, foto zənglər və masa dekoru. 150+ hazırlanmış tədbir, 24 saat ərzində sifariş cavabı. İlk konsultasiya pulsuzdur.",
+    "Bakıda ad günü dekoru və tədbir dekorasiyası. 1 yaş, uşaq və böyüklər ad günü, məzuniyyət, kiçik toy dekoru — özəl dizayn, gözəl balonlar. 600+ tədbir təcrübəsi. WhatsApp 7/24.",
   keywords: [
     "ad günü dekoru",
-    "balon dekoru",
+    "ad günü dekoru Bakı",
+    "dekor Bakı",
+    "tədbir dekorasiyası",
+    "1 yaş dekoru",
+    "uşaq ad günü dekoru",
+    "doğum günü dekoru",
+    "balon dekoru Bakı",
+    "ad günü bəzədilməsi",
+    "məzuniyyət dekoru",
+    "kiçik toy dekoru",
     "foto zəng",
     "masa dekoru",
-    "ad günü bəzədilməsi",
     "Bakı dekorasiya",
-    "doğum günü dekoru",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -29,10 +36,10 @@ export const metadata: Metadata = {
     locale: "az_AZ",
     url: SITE_URL,
     siteName: "Ad Günü Dekor",
-    title: "Ad Günü Dekor — Bakıda balon, foto zəng və masa dekoru",
+    title: "Ad Günü Dekor — Bakıda tədbir dekorasiyası",
     description:
-      "Hər doğum günü unudulmaz bir səhnəyə çevrilsin. Balon, foto zəng və masa dekoru — Bakıda.",
-    images: [{ url: "/assets/sample-masa.jpg", width: 1100, height: 733 }],
+      "Tədbirlərinizi öz dizaynımızla özəl bəzəyirik. Siz sadəcə qonaqları qarşılayın, qalanı bizim işimizdir.",
+    images: [{ url: "/assets/og.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -44,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fff8f3",
+  themeColor: "#376c6c",
   width: "device-width",
   initialScale: 1,
 };

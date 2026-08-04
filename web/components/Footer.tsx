@@ -119,7 +119,7 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} Ad Günü Dekor</span>
           <div className="flex items-center gap-3">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/adgunu_dekor1"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

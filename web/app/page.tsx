@@ -23,21 +23,25 @@ export default async function HomePage() {
   ]);
 
   // Google üçün structured data (LocalBusiness)
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Ad Günü Dekor",
     description:
-      "Bakıda ad günü dekorasiyası: balon kompozisiyaları, foto zənglər və masa dekoru.",
+      "Bakıda ad günü və tədbir dekorasiyası — 1 yaş, uşaq və böyüklər ad günü, məzuniyyət və kiçik toy dekoru. Özəl dizayn və balon dekoru.",
     telephone: "+994702721555",
+    image: `${siteUrl}/assets/og.jpg`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Bakı",
       addressCountry: "AZ",
     },
+    areaServed: { "@type": "City", name: "Bakı" },
+    sameAs: ["https://www.instagram.com/adgunu_dekor1"],
     openingHours: "Mo-Su 08:00-02:00",
     priceRange: "₼₼",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    url: siteUrl,
     ...(packages.length > 0 && {
       makesOffer: packages.map((pkg) => ({
         "@type": "Offer",
