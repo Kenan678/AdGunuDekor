@@ -256,12 +256,12 @@ function GalleryManager({ onUnauthorized }: { onUnauthorized: () => void }) {
             accept="image/jpeg,image/png,image/webp"
             onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             required
-            className="rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-blush file:px-3 file:py-1 file:text-xs file:font-semibold file:text-rose"
+            className="w-full min-w-0 rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-blush file:px-3 file:py-1 file:text-xs file:font-semibold file:text-rose"
           />
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
+            className="w-full min-w-0 rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
           >
             {CATEGORIES.map((c) => (
               <option key={c.key} value={c.key}>
@@ -274,12 +274,12 @@ function GalleryManager({ onUnauthorized }: { onUnauthorized: () => void }) {
             placeholder="Alt mətn (SEO üçün)"
             value={altText}
             onChange={(e) => setAltText(e.target.value)}
-            className="rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
+            className="w-full min-w-0 rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
           />
           <button
             type="submit"
             disabled={uploading || !file}
-            className="rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark disabled:opacity-50"
+            className="w-full rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark disabled:opacity-50"
           >
             {uploading ? "Yüklənir..." : "Yüklə"}
           </button>
@@ -502,7 +502,7 @@ function VideoManager({ onUnauthorized }: { onUnauthorized: () => void }) {
             accept="video/mp4,video/webm,video/quicktime"
             onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             required
-            className="rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-blush file:px-3 file:py-1 file:text-xs file:font-semibold file:text-rose"
+            className="w-full min-w-0 rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-blush file:px-3 file:py-1 file:text-xs file:font-semibold file:text-rose"
           />
           <input
             type="text"
@@ -510,12 +510,12 @@ function VideoManager({ onUnauthorized }: { onUnauthorized: () => void }) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            className="rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
+            className="w-full min-w-0 rounded-xl border border-ink/10 bg-cream px-4 py-2.5 text-sm"
           />
           <button
             type="submit"
             disabled={uploading || !file || !title.trim()}
-            className="rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark disabled:opacity-50"
+            className="w-full rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark disabled:opacity-50"
           >
             {uploading ? "Yüklənir..." : "Yüklə"}
           </button>
