@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const NAV_LINKS = [
   { href: "#xidmetler", label: "Xidmətlər" },
@@ -49,7 +50,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="https://wa.me/994702721555"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark sm:inline-block"
@@ -91,7 +92,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="https://wa.me/994702721555"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-rose px-5 py-2.5 text-center font-display text-sm font-semibold text-white"

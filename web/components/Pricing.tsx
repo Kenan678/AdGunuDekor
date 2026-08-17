@@ -1,5 +1,6 @@
 import type { PricingPackage } from "@/lib/api";
 import Reveal from "@/components/Reveal";
+import { buildWhatsappUrl } from "@/lib/whatsapp";
 
 export default function Pricing({
   packages,
@@ -82,7 +83,9 @@ export default function Pricing({
                 </div>
 
                 <a
-                  href="https://wa.me/994702721555"
+                  href={buildWhatsappUrl(
+                    `Salam, mən Ad Günü Dekor saytından "${pkg.name}" paketi ilə maraqlanıram. Ətraflı məlumat ala bilərəmmi?`
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-6 block rounded-full py-3.5 text-center font-display text-sm font-semibold transition-colors duration-300 ${

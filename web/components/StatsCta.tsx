@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const STATS = [
   { value: "600+", label: "Xoşbəxt müştəri" },
@@ -28,7 +29,7 @@ export default function StatsCta() {
           </Reveal>
           <Reveal direction="zoom" delay={250}>
             <a
-              href="https://wa.me/994702721555"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-block rounded-full bg-rose px-8 py-3.5 font-display text-sm font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:bg-rose-dark"

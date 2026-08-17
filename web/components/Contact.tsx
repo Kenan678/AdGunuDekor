@@ -1,11 +1,12 @@
 import Reveal from "@/components/Reveal";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const INFO = [
   {
     icon: "📱",
     title: "WhatsApp",
     lines: ["+994 70 272 15 55"],
-    href: "https://wa.me/994702721555",
+    href: WHATSAPP_URL,
   },
   {
     icon: "📸",
@@ -84,7 +85,7 @@ export default function Contact() {
           </Reveal>
           <Reveal direction="zoom" delay={300}>
             <a
-              href="https://wa.me/994702721555"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-block rounded-full bg-rose px-9 py-3.5 font-display text-sm font-semibold text-white shadow-xl shadow-rose/30 transition-all duration-300 ease-out hover:scale-105 hover:bg-rose-dark"

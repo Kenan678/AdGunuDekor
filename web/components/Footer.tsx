@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const COMPANY_LINKS = [
   { href: "#xidmetler", label: "Xidmətlər" },
@@ -98,7 +99,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/994702721555"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-rose"
@@ -128,7 +129,7 @@ export default function Footer() {
               ⌾
             </a>
             <a
-              href="https://wa.me/994702721555"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

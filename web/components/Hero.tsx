@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
           <Reveal direction="left" delay={450}>
             <div className="mt-9 flex items-center gap-5">
               <a
-                href="https://wa.me/994702721555"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-rose px-8 py-3.5 font-display text-sm font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:bg-rose-dark"
