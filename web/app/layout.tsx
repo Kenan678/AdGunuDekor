@@ -48,6 +48,16 @@ export const metadata: Metadata = {
       "Balon kompozisiyaları, foto zənglər və masa dekoru. İlk konsultasiya pulsuzdur.",
   },
   robots: { index: true, follow: true },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icons/icon-192.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "AGD Admin",
+  },
 };
 
 export const viewport: Viewport = {

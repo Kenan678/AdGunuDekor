@@ -22,12 +22,17 @@
 
 html {
   scroll-behavior: smooth;
+  /* Mobildə ekranı yan çevirəndə (landscape) səhifənin sağa "sürüşüb qalması"
+     bug-unun qarşısını alır — yalnız body-də olanda kifayət etmir */
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
   @apply bg-cream text-ink font-sans antialiased;
   /* Yan tərəfdən gələn animasiyalar üfüqi scroll yaratmasın */
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1,
