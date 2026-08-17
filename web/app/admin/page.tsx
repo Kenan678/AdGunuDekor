@@ -43,14 +43,14 @@ export default function AdminPage() {
           <LoginForm onSuccess={() => setAuthed(true)} />
         ) : (
           <>
-            <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <h1 className="font-display text-3xl font-bold tracking-tight">
                 Admin Panel
               </h1>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   onClick={() => setTab("gallery")}
-                  className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
                     tab === "gallery"
                       ? "bg-ink text-white"
                       : "bg-white text-muted shadow-sm"
@@ -60,7 +60,7 @@ export default function AdminPage() {
                 </button>
                 <button
                   onClick={() => setTab("pricing")}
-                  className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
                     tab === "pricing"
                       ? "bg-ink text-white"
                       : "bg-white text-muted shadow-sm"
@@ -70,7 +70,7 @@ export default function AdminPage() {
                 </button>
                 <button
                   onClick={() => setTab("video")}
-                  className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors sm:px-5 ${
                     tab === "video"
                       ? "bg-ink text-white"
                       : "bg-white text-muted shadow-sm"
@@ -83,7 +83,7 @@ export default function AdminPage() {
                     clearToken();
                     setAuthed(false);
                   }}
-                  className="rounded-full border border-ink/10 px-5 py-2 text-sm font-semibold text-muted transition-colors hover:text-rose"
+                  className="rounded-full border border-ink/10 px-4 py-2 text-sm font-semibold text-muted transition-colors hover:text-rose sm:px-5"
                 >
                   Çıxış
                 </button>
@@ -851,7 +851,7 @@ function PackageForm({
         </label>
       </div>
 
-      <div className="mt-6 flex gap-3">
+      <div className="mt-6 flex flex-wrap gap-3">
         <button
           type="submit"
           className="rounded-full bg-rose px-6 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-rose-dark"
