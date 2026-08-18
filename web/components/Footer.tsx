@@ -2,10 +2,10 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const COMPANY_LINKS = [
-  { href: "#xidmetler", label: "Xidmətlər" },
-  { href: "#qalereya", label: "Qalereya" },
-  { href: "#qiymetler", label: "Qiymətlər" },
-  { href: "#elaqe", label: "Əlaqə" },
+  { href: "/haqqimizda", label: "Haqqımızda" },
+  { href: "/qalereya", label: "Qalereya" },
+  { href: "/qiymetler", label: "Qiymətlər" },
+  { href: "/elaqe", label: "Əlaqə" },
 ];
 
 const SERVICES = [
