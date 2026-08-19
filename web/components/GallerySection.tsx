@@ -5,6 +5,11 @@ import { imageUrl, type GalleryImage } from "@/lib/api";
 import { CATEGORIES } from "@/lib/categories";
 import Reveal from "@/components/Reveal";
 
+// Kateqoriya açarına görə tam adı tapır (alt-text üçün, məs. "1 Yaş Ad Günü Dekoru").
+function categoryLabel(key: string): string {
+  return CATEGORIES.find((c) => c.key === key)?.label ?? "Ad günü dekoru";
+}
+
 const FILTERS = [
   { key: "all", label: "Hamısı" },
   ...CATEGORIES.map((c) => ({ key: c.key, label: c.short })),
@@ -36,7 +41,7 @@ export default function GallerySection({
             </Reveal>
             <Reveal direction="left" delay={150}>
               <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-                İşlərimizdən bir neçə kadr
+                Ad günü dekoru nümunələrimizdən bir neçə kadr
               </h2>
             </Reveal>
           </div>
@@ -75,7 +80,10 @@ export default function GallerySection({
                   {/* Bütün şəkillər eyni nisbətdə (3:4) kəsilir → səliqəli cərgə */}
                   <img
                     src={imageUrl(img.url)}
-                    alt={img.altText ?? "Ad günü dekoru nümunəsi"}
+                    alt={
+                      img.altText ??
+                      `${categoryLabel(img.category)} — Bakıda tamamlanmış tədbir, Ad Günü Dekor`
+                    }
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -108,7 +116,10 @@ export default function GallerySection({
           </button>
           <img
             src={imageUrl(lightbox.url)}
-            alt={lightbox.altText ?? "Ad günü dekoru"}
+            alt={
+              lightbox.altText ??
+              `${categoryLabel(lightbox.category)} — Ad Günü Dekor`
+            }
             className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />

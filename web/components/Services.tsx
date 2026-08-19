@@ -32,7 +32,7 @@ export default function Services({
           <Reveal direction="left">
             <span className="script-label">Xidmətlərimiz</span>
             <h2 className="mt-3 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-              Hər mövzuya uyğun dekor
+              Bakıda hər mövzuya uyğun ad günü dekoru
             </h2>
           </Reveal>
           <Reveal direction="right" className="lg:pb-2">

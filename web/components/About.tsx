@@ -43,7 +43,7 @@ export default function About() {
 
           <Reveal direction="left" delay={150}>
             <h2 className="mt-3 font-display text-3xl font-bold leading-snug tracking-tight sm:text-4xl">
-              Hər tədbirdə bir sevgi hekayəsi yaradırıq
+              Ad günü dekoru ilə hər tədbirdə bir sevgi hekayəsi yaradırıq
             </h2>
           </Reveal>
 

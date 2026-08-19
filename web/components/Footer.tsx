@@ -5,6 +5,7 @@ const COMPANY_LINKS = [
   { href: "/haqqimizda", label: "Haqqımızda" },
   { href: "/qalereya", label: "Qalereya" },
   { href: "/qiymetler", label: "Qiymətlər" },
+  { href: "/ideyalar", label: "Fikirlər" },
   { href: "/elaqe", label: "Əlaqə" },
 ];
 

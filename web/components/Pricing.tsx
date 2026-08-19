@@ -28,7 +28,7 @@ export default function Pricing({
           </Reveal>
           <Reveal delay={150}>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Büdcənizə uyğun paketlər
+              Ad günü dekoru üçün büdcənizə uyğun paketlər
             </h2>
             <p className="mt-4 text-muted">
               Hər paketə rəng seçimi, quraşdırma və konsultasiya daxildir.

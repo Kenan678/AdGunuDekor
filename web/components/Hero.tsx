@@ -14,7 +14,8 @@ export default function Hero() {
 
           <Reveal direction="left" delay={150}>
             <h1 className="mt-4 font-display text-4xl font-bold leading-[1.12] text-green sm:text-5xl xl:text-[3.6rem]">
-              Hər doğum günü unudulmaz bir səhnəyə çevrilsin
+              Bakıda ad günü dekoru: hər doğum günü unudulmaz bir səhnəyə
+              çevrilsin
             </h1>
           </Reveal>
 
