@@ -104,51 +104,55 @@ public static class DbInitializer
             ("seed-15.jpg", GalleryCategory.BirYas,    "Jasmin — 1 yaş qız, çəhrayı pəri temalı dekor"),
         };
 
-        var order = 0;
-        foreach (var img in seedImages)
+        // DİQQƏT: seed yalnız cədvəl TAMAMİLƏ BOŞ olduqda (yəni tətbiqin
+        // tarixində heç vaxt işə salınmayıbsa) əlavə olunur. Əvvəllər burada
+        // hər şəkil üçün ayrıca "bu fayl adı DB-də yoxdursa əlavə et" yoxlaması
+        // var idi — bu, admin paneldən bir seed şəklini/videonu SİLDİKDƏN sonra
+        // server yenidən başladılanda onun avtomatik geri gəlməsinə səbəb olurdu
+        // (silinmə "heç vaxt seedlənməyib" kimi qəbul olunurdu). İndi bütün
+        // cədvəlin boş olub-olmadığına baxılır ki, admin silmələri həmişəlik olsun.
+        if (!await db.GalleryImages.AnyAsync())
         {
-            order++;
-            if (await db.GalleryImages.AnyAsync(g => g.FileName == img.File))
+            var order = 0;
+            foreach (var img in seedImages)
             {
-                continue; // artıq var — keç
+                order++;
+                db.GalleryImages.Add(new GalleryImage
+                {
+                    FileName = img.File,
+                    Category = img.Category,
+                    AltText = img.Alt,
+                    SortOrder = order
+                });
             }
 
-            db.GalleryImages.Add(new GalleryImage
-            {
-                FileName = img.File,
-                Category = img.Category,
-                AltText = img.Alt,
-                SortOrder = order
-            });
+            await db.SaveChangesAsync();
         }
 
-        await db.SaveChangesAsync();
-
-        // Video seed — wwwroot/uploads/videos-da hazır qoyulmuş fayllar. İdempotent.
+        // Video seed — wwwroot/uploads/videos-da hazır qoyulmuş fayllar.
+        // Yalnız cədvəl tamamilə boşdursa əlavə olunur (yuxarıdakı izaha bax).
         var seedVideos = new (string File, string Poster, string Title)[]
         {
             ("seedvid-1.mp4", "seedvid-1.jpg", "Ad günü quruluşu — səhnə arxası"),
             ("seedvid-2.mp4", "seedvid-2.jpg", "Tədbir günü — tam dekor"),
         };
 
-        var vOrder = 0;
-        foreach (var v in seedVideos)
+        if (!await db.Videos.AnyAsync())
         {
-            vOrder++;
-            if (await db.Videos.AnyAsync(x => x.FileName == v.File))
+            var vOrder = 0;
+            foreach (var v in seedVideos)
             {
-                continue;
+                vOrder++;
+                db.Videos.Add(new Video
+                {
+                    FileName = v.File,
+                    PosterFileName = v.Poster,
+                    Title = v.Title,
+                    SortOrder = vOrder
+                });
             }
 
-            db.Videos.Add(new Video
-            {
-                FileName = v.File,
-                PosterFileName = v.Poster,
-                Title = v.Title,
-                SortOrder = vOrder
-            });
+            await db.SaveChangesAsync();
         }
-
-        await db.SaveChangesAsync();
     }
 }
